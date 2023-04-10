@@ -62,7 +62,7 @@ source("Visualization.R")
 ### Information Retrieval
 This is perhaps the most important step. You can make your query essentially any medical or biotechnological query you'd like, but remember that a well-made query can significantly improve the raw data KAF retrieves, therefore the results of the text mining.
 See these references for how to manage the unique syntax of each database to optimise your search queries.
-[PubMed Query Help/Syntax](https://pubmed.ncbi.nlm.nih.gov/help/)
+[PubMed Query Help/Syntax](https://pubmed.ncbi.nlm.nih.gov/help/) or
 [Europe PMC Query Syntax](https://europepmc.org/searchsyntax)
 ```
 myQuery <- "human DNA polymerase AND (damage or repair)"
