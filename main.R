@@ -25,5 +25,5 @@
 
       #     exporting to CSV for excel if you'd like
       
-            write.csv(test_rules_3, file = "sig_rules.csv")
+            write.csv(viz, file = "sig_rules.csv")
 
