@@ -28,7 +28,7 @@ Windows
 python -m venv /path/to/directory
 path\to\venv\Scripts\activate.bat
 pip install spacy
--m spacy download en_core_web_sm
+python -m spacy download en_core_web_sm
 ```
 
 Mac
