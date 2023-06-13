@@ -19,6 +19,9 @@ This tool mines anywhere from 500 to 20,000 articles that relate to a PubMed or 
 ```
 devtools::install_github('dandycodingpipe/KAFtool')
 library(KAFtool)
+library(tidyverse)
+library(httr)
+library(jsonlite)
 ```
 * Before anything, make sure you have R and python installed on your computer.
 * Install pip and venv through your command line interface (command prompt on Windows/terminal on Mac)
