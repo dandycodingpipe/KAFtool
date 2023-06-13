@@ -1,6 +1,6 @@
 Package: KAFtool
 Title: Read hundreds to thousands of PubMed abstracts and discovery the most significant keyword relationships!
-Version: 0.0.0.9000
+Version: 1.0.1
 Authors@R: 
     person("Christian Alejandro", "Hernandez-Fajardo", , "christian.a.hernandezf@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
