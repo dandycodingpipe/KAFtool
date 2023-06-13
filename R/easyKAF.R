@@ -45,7 +45,7 @@ databaseString <- toupper(toString(readline(paste("U.S PubMed or Europe PMC as a
       # 1. retrieving
 
 
-                  source("Information_Retrieval.R")
+
 
                   retrieved <- info_retrieval(query = queryString, how_many_articles = 5000,  database = databaseString)
 
