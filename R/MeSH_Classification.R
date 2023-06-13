@@ -5,8 +5,7 @@
 
 #This script makes exact word matches between the association rule consequents and MeSH's thesaurus
 
-library(httr)
-library(jsonlite)
+
 
 #test data set/ troubleshooting script
 #test <- read.csv("sig_rules.csv")
@@ -193,7 +192,8 @@ MeSH_filter <- function(MeSH_data){
 #' @examples
 #' MeSH_finalizer(rules, removal = c("ml(-1","sub>2</sub","study","lead","±", "°", "confidence", "-", "%", "β", ">", "sub>50</sub","müllerian", "#"))
 MeSH_finalizer <- function(raw_rules, removal){
-
+    library(httr)
+    library(jsonlite)
       library(dplyr)
 
       classifications <- MeSH_Mapper(raw_rules,removal)
