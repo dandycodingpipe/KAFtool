@@ -205,3 +205,25 @@ MeSH_finalizer <- function(raw_rules, removal){
       return(final_Df)
 }
 
+
+#' Clean association rules
+#'
+#' Before fuzzy matching we have to pre-process the rules by concatenating them into a single string
+#' @name Rule_Concatenator
+#' @param rules The data frame of rules you want to concatenate
+#' @keywords Post processing, Association-rule mining, ARM, classification, MeSH
+#' @export
+#' @examples
+#'
+Rule_Concatenator <- function(rules) {
+  LHS <- as.character(rules$LHS)
+  RHS <- as.character(rules$RHS)
+
+  LHSpenul <- nchar(LHS) - 1
+  RHSpenul <- nchar(RHS) - 1
+
+  toFuzzy <- paste(substr(LHS, 2, LHSpenul), substr(RHS, 2, RHSpenul), sep = " ")
+
+  return(data.frame(toFuzzy, stringsAsFactors = FALSE))
+}
+
