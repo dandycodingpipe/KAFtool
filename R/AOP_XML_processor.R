@@ -12,7 +12,7 @@
   library(XML)
 
   #testing
-  doc <- "aop-wiki-xml-2023-04-01(1)"
+  #doc <- "aop-wiki-xml-2023-04-01(1)"
 
 AOP_XML_children_organizer <- function(doc) {
 
