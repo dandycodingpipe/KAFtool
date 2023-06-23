@@ -3,6 +3,9 @@
 \name{AOP_XML_children_organizer}
 \alias{AOP_XML_children_organizer}
 \title{Converts AOP-wiki XML files into R data frames for further processing}
+\usage{
+AOP_XML_children_organizer(doc)
+}
 \arguments{
 \item{doc}{XML file downloaded from AOP-wiki}
 }

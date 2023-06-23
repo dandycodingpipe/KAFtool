@@ -213,8 +213,7 @@ MeSH_finalizer <- function(raw_rules, removal){
 #' @param rules The data frame of rules you want to concatenate
 #' @keywords Post processing, Association-rule mining, ARM, classification, MeSH
 #' @export
-#' @examples
-#'
+#' @examples Rule_Concatenator(rules)
 Rule_Concatenator <- function(rules) {
   LHS <- as.character(rules$LHS)
   RHS <- as.character(rules$RHS)

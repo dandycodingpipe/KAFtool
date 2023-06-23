@@ -12,6 +12,9 @@ Rule_Concatenator(rules)
 \description{
 Before fuzzy matching we have to pre-process the rules by concatenating them into a single string
 }
+\examples{
+Rule_Concatenator(rules)
+}
 \keyword{ARM,}
 \keyword{Association-rule}
 \keyword{MeSH}

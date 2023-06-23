@@ -9,12 +9,9 @@
 #' @examples
 #' Word_Cleaner(data = association_rules_df)
 
-  library(XML)
-
-  #testing
-  #doc <- "aop-wiki-xml-2023-04-01(1)"
-
 AOP_XML_children_organizer <- function(doc) {
+
+  library(XML)
 
   doc <- xmlRoot(xmlTreeParse(doc))
 
