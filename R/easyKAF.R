@@ -18,7 +18,6 @@ easyKAF <- function(venv, lang_model){
 
   library(tidyverse)
   library(tidytext)
-  library(tm)
   library(arules)
   library(arulesViz)
 

@@ -40,14 +40,22 @@ Abstract_ARM <- function(data, min_supp, min_conf, min_p ){
   falses <- which(table == FALSE)
   rules <- rules[-falses,]
 
-  print("Formatting rules into R-data frame...")
+  print("Formatting rules into R-data frame and removing special symbols of n:...")
   df_rules <- DATAFRAME(rules)
-  #if(length(which(df_rules$RHS=="{-}"))!= 0) {
-  #df_rules <- df_rules[-which(df_rules$RHS == "{-}"),]
-  #}
-  #if(length(which(df_rules$RHS=="{%}"))!= 0) {
-  #df_rules <- df_rules[-which(df_rules$RHS== "{%}"),]
-  #}
+    if(length(which(df_rules$RHS=="{-}"))!= 0) {
+      print(length(which(df_rules$RHS=="{-}")))
+      df_rules <- df_rules[-which(df_rules$RHS == "{-}"),]
+    }
+
+  if(length(which(df_rules$RHS=="{%}"))!= 0) {
+    print(length(which(df_rules$RHS=="{%}")))
+      df_rules <- df_rules[-which(df_rules$RHS== "{%}"),]
+  }
+
+  if(length(which(df_rules$RHS=="{=}"))!= 0) {
+    print(length(which(df_rules$RHS=="{=}")))
+    df_rules <- df_rules[-which(df_rules$RHS== "{=}"),]
+  }
   print("Done!")
   return(df_rules)
 }

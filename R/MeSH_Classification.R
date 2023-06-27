@@ -223,6 +223,6 @@ Rule_Concatenator <- function(rules) {
 
   toFuzzy <- paste(substr(LHS, 2, LHSpenul), substr(RHS, 2, RHSpenul), sep = " ")
 
-  return(data.frame(toFuzzy, stringsAsFactors = FALSE))
+  return(data.frame(toFuzzy, rules$RHS, stringsAsFactors = FALSE))
 }
 
