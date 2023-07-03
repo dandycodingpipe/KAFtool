@@ -18,26 +18,23 @@ KAF_Deduplication <- function(rules) {
   library(textreuse)
 
   #Defining hash table parameters
-  minhash <- minhash_generator(n = 1000, seed = 3552)
+  minhash <- minhash_generator(n = 2000, seed = 3552)
 
   #Structures string documents for LSH (change the 1 to any number to compare different "pre-bucket" sets of data)
   corpus <- TextReuseCorpus(text = broken_down$toFuzzy, tokenizer = tokenize_ngrams, n = 1,
                             minhash_func = minhash, keep_tokens = TRUE,
                             progress = TRUE)
 
-  #Personal calculators for determining the probability an item will be put in a bucket or that a match will be made(?)
-  lsh_threshold(h = 5000, b = 200)
-
-  #what is this?
-  lsh_probability(h = 5000, b = 200, s = 0.0)
-
 
   #Create buckets for storing potentially similar keys
-  buckets <- lsh(corpus, bands = 100, progress = TRUE)
+  buckets <- lsh(corpus, bands = 200, progress = TRUE)
 
   #Calculate and extract scores according to my threshold
   final <- lsh_compare(lsh_candidates(buckets), corpus, jaccard_similarity, progress = TRUE)
+  print(length(final$score))
+  print(paste(length(final[which(final$score >= 0.75),]), "observations are above the 75% threshold."))
   final = final[which(final$score >= 0.9),]
+  print(paste(length(final[which(final$score >= 0.90),]), "observations are above the 90% threshold."))
 
   #The workflow of removing duplicates
   toKeep <- c()
