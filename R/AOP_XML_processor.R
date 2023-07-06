@@ -43,7 +43,7 @@ for(h in 1:length(unique_classes)){
   label <- unique_classes[h]
 
   for(i in 1:length(my_list[[label]])){
-    print(label)
+
     # Use switch case based on the value of the number variable
     result <- switch(label,
                      "chemical" = "preferred-name",
@@ -56,13 +56,13 @@ for(h in 1:length(unique_classes)){
                      "aop" = "short-name",
                      default = NULL)
 
-    print(result)
+
     coordinate <- my_list[[label]][i]
-    print(coordinate)
+
 
     if (!is.null(result)) {
       text <- tmp[[coordinate]][result]
-      print(text)
+
       new_row <- c(label, toString(text))
       tester <- rbind(tester, new_row)
     }
