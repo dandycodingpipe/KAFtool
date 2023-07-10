@@ -86,9 +86,9 @@ words <- setdiff(words, removal)
             print(paste0('Index ',i,": ",words$unique_rules[i]))
             #rint(words$unique_rules[i])
             #clean problematic characters
-            words$unique_rules[i] <- gsub(')','',words$unique_rules[i])
-            words$unique_rules[i] <- gsub('<','',words$unique_rules[i])
-            words$unique_rules[i] <- gsub('<','',words$unique_rules[i])
+            #words$unique_rules[i] <- gsub(')','',words$unique_rules[i])
+            #words$unique_rules[i] <- gsub('<','',words$unique_rules[i])
+            #words$unique_rules[i] <- gsub('<','',words$unique_rules[i])
 
             #create the SQL query that returns the links for possible RDF id matches
             SQL_token_query_modifier <- paste(getsparq_left,words$unique_rules[i],getsparq_right1,words$unique_rules[i],get_sqarq_right2, sep = "")
