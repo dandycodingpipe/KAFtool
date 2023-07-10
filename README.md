@@ -109,6 +109,7 @@ ex. [Linkedin](https://www.linkedin.com/in/christianalejandro/)
 
 * 0.2 (coming soon)
     * KAF is now defined as an R package that can be retrieved through devtools::github!
+    * KAF now integrates new features like rule-set deduplication and AOP-wiki classification for AOP discovery
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
@@ -125,7 +126,8 @@ Europe PMC Articles in the open access subset are still protected by copyright, 
 
 ## Acknowledgments
 
-This tool was developed throughout the course of an 8-week internship in the [Systox group](https://systox.u-paris-sciences.fr/) (Unit T3S) at the Université Paris Cité.
+This tool was developed for the [Systox group](https://systox.u-paris-sciences.fr/) (Unit T3S) at the Université Paris Cité as a means of exploring new methods for leveraging scientific research for the discovery of adverse outcome pathways.
 
-Inspiration for this tool:
+Complementary tool:
+
 * [AOP-helpFinder](http://aop-helpfinder.u-paris-sciences.fr/)
