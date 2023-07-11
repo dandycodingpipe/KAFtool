@@ -1,14 +1,14 @@
-#' A fully integrated Pubmed abstract retrieval function
+#' Extract PubMed or Europe PMC entry information for a query
 #'
-#' This function allows you to query and access key Pubmed entry data from one of two databases: PubMed and EuropePMC.
+#' Combines functionality from two R-packages: "easyPubMed" and "europepmc" for more reliable PubMed abstract extraction.
 #' @name info_retrieval
-#' @param Query Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!
-#' @param how_many_articles Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results.
-#' @param database Define the database you'd like to use: "pubmed" or "pmc".
-#' @keywords Pubmed, PMC, Query
+#' @param query Your typical PubMed query. Optimizing your query using the proper PubMed or Europe PMC syntax improves results.
+#' @param how_many_articles An integer the number of entries to retrieve. PubMed is limited to about 1500 articles, which Europe PMC can pull around 20,000.
+#' @param database Define the PubMed database to retrieve from: "pubmed" or "pmc".
+#' @keywords Retrieval, PubMed, Europe PMC, Article
 #' @export
 #' @examples
-#' info_retireval(Query = "Vape smoking AND toxicity", how_many_articles = 750, database = "pubmed")
+#' info_retireval(query = "Vape smoking AND toxicity", how_many_articles = 750, database = "pubmed")
 
             library(tidyverse)
             library(easyPubMed)
@@ -52,20 +52,21 @@ info_retrieval <- function(query, how_many_articles, database) {
       return(retrieved_info)
 }
 
-# pubmed search and retrieve function
+# PubMed multi-entry and retrieval function
 
-#' The NIH Pubmed search and retrieve function
+#' PubMed multi-entry and retrieval function
 #'
-#' This function allows you to query and access key Pubmed entry data from one of two databases: PubMed and EuropePMC.
+#' This function allows you to query and access key entry data from PubMed.
 #' @name pubmed_retrieval
-#' @param Query Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!
-#' @param retmax Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results.
+#' @param query Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!
+#' @param retmax Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results. (Limit is around 1500)
 #' @keywords Pubmed, PMC, Query, Retrieval
 #' @export
 #' @examples
 #' pubmed_retrieval(Query = "Vape smoking AND toxicity", retmax = 750)
 
 pubmed_retrieval <- function(query, retmax) {
+
       #1 PMID Retrieval
 
       PMIDs <- get_pubmed_ids(query)
@@ -74,26 +75,26 @@ pubmed_retrieval <- function(query, retmax) {
       #2 XML Format Record Download w/ PMID list
       articleInfo <- fetch_pubmed_data(PMIDs, retmax = retmax)
 
-      #4 Convert XML to String
+      #3 Convert XML to String
       #(this is to convert the content of each PubMed record to a character-class object)
       xmlToString <- articles_to_list(articleInfo)
       print(paste(length(xmlToString), "abstracts were retrieved. Creating output dataframe... (this may take a while)"))
 
-      #5 Dataframe Retrieval
+      #4 Dataframe Retrieval
       stringToDF <- do.call(rbind,lapply(xmlToString, article_to_df, max_chars = -1, getAuthors = FALSE))
       return(stringToDF)
 }
 
 # pmc search and retrieve function
 
-# pubmed search and retrieve function
+# PubMed multi-entry retrieval function
 
-#' The Europe PMC search and retrieve function
+#' The Europe PMC search and retrieve function used for sourcing abstracts.
 #'
-#' This function allows you to query and access key Pubmed entry data from one of two databases: PubMed and EuropePMC.
+#' This function allows you to query and access key entry data from European PubMed central.
 #' @name europepmc_retrieval
-#' @param Query Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!
-#' @param retmax Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results.
+#' @param query Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!
+#' @param retmax Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results. (Limit is around 20,000)
 #' @keywords Pubmed, EuropePMC, PMC, Query, Retrieval
 #' @export
 #' @examples

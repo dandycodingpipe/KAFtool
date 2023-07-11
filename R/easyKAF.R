@@ -17,9 +17,8 @@
 easyKAF <- function(venv, lang_model){
 
   library(tidyverse)
-  library(tidytext)
   library(arules)
-  library(arulesViz)
+
 
 # what do you want to search?
 
@@ -35,7 +34,7 @@ print("microfabrication chip AND membrane encapsulation")
 
 #commence KAF worfklow
 
-queryString <- toupper(toString(readline("these are some examples above. write whatever you want and see what biologists know about the subject!")))
+queryString <- toupper(toString(readline("these are some examples above. write whatever you want and see what we know about the subject!")))
 
 databaseString <- toupper(toString(readline(paste("U.S PubMed or Europe PMC as a database? (EU runs better!)", '\n', "EU (1) or US (2):"))))
 

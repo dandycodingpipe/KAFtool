@@ -1,6 +1,6 @@
 
 
-#' Perform association-rules mining on lemmatized abstracts.
+#' Perform association-rules mining on pre-processed PubMed abstracts.
 #'
 #' Using the results from the Text_Parser() function, generate a dataframe of association-rules from the corpus. P-values for results are calculated using Fischer's exact test, and FDR are used to remove false rejections of the null hypothesis.
 #' Be aware of your ARM mining parameters because these can seriously impact your computational load.
