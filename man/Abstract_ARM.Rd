@@ -2,7 +2,7 @@
 % Please edit documentation in R/Apriori_ARM_tool.R
 \name{Abstract_ARM}
 \alias{Abstract_ARM}
-\title{Perform association-rules mining on lemmatized abstracts.}
+\title{Perform association-rules mining on pre-processed PubMed abstracts.}
 \arguments{
 \item{data}{Your text_parser() results go here.}
 

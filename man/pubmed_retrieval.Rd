@@ -2,17 +2,17 @@
 % Please edit documentation in R/Information_Retrieval.R
 \name{pubmed_retrieval}
 \alias{pubmed_retrieval}
-\title{The NIH Pubmed search and retrieve function}
+\title{PubMed multi-entry and retrieval function}
 \usage{
 pubmed_retrieval(query, retmax)
 }
 \arguments{
-\item{retmax}{Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results.}
+\item{query}{Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!}
 
-\item{Query}{Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!}
+\item{retmax}{Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results. (Limit is around 1500)}
 }
 \description{
-This function allows you to query and access key Pubmed entry data from one of two databases: PubMed and EuropePMC.
+This function allows you to query and access key entry data from PubMed.
 }
 \examples{
 pubmed_retrieval(Query = "Vape smoking AND toxicity", retmax = 750)

@@ -2,20 +2,22 @@
 % Please edit documentation in R/Information_Retrieval.R
 \name{info_retrieval}
 \alias{info_retrieval}
-\title{A fully integrated Pubmed abstract retrieval function}
+\title{Extract PubMed or Europe PMC entry information for a query}
 \arguments{
-\item{Query}{Your typical PubMed query. Optimizing your query using the proper pubmed syntax improves results!}
+\item{query}{Your typical PubMed query. Optimizing your query using the proper PubMed or Europe PMC syntax improves results.}
 
-\item{how_many_articles}{Define how many entries you'd like to access for a query. Keep it between 500-1000 for fastest results.}
+\item{how_many_articles}{An integer the number of entries to retrieve. PubMed is limited to about 1500 articles, which Europe PMC can pull around 20,000.}
 
-\item{database}{Define the database you'd like to use: "pubmed" or "pmc".}
+\item{database}{Define the PubMed database to retrieve from: "pubmed" or "pmc".}
 }
 \description{
-This function allows you to query and access key Pubmed entry data from one of two databases: PubMed and EuropePMC.
+Combines functionality from two R-packages: "easyPubMed" and "europepmc" for more reliable PubMed abstract extraction.
 }
 \examples{
-info_retireval(Query = "Vape smoking AND toxicity", how_many_articles = 750, database = "pubmed")
+info_retireval(query = "Vape smoking AND toxicity", how_many_articles = 750, database = "pubmed")
 }
+\keyword{Article}
+\keyword{Europe}
 \keyword{PMC,}
-\keyword{Pubmed,}
-\keyword{Query}
+\keyword{PubMed,}
+\keyword{Retrieval,}
