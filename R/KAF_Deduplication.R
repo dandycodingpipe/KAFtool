@@ -3,7 +3,7 @@
 #'
 #' This function returns a smaller ruleset containing less near-duplicates using Locality Sensitive Hashing (LSH).
 #' @name KAF_Deduplication
-#' @param rules Rules generated through easyKAF or the manual KAF pipeline.
+#' @param rules Rules generated through easyKAF or the manual KAF pipeline. Limit this parameter to at most 20,000 rules for reasonable computation times, but if you have a more potent computer this function is limited to 2^31 comparisons.
 #' @keywords Hashing, LSH, Locality sensitive hashing, deduplication
 #' @export
 #' @examples

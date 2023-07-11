@@ -1,9 +1,9 @@
 # KAF Rule AOP-wiki Fuzzy Matching
-#' Uses Locality Sensitive Hashing and Jaccard Similarity to evaluate
+#' Compare KAF results to the AOP-wiki database to find notable key events, stressors, and biological processes present in your PubMed query.
 #'
-#' This function returns a smaller ruleset containing less near-duplicates using Locality Sensitive Hashing (LSH).
+#' (In development) Uses locality-sensitive hashing to efficiently cluster and calculate the Jaccard similarity between mined rules and AOP-wiki values/classes. Values below 60% similarity are not considered matches.
 #' @name KAFxAOP
-#' @param rules generated through
+#' @param rules Association rule dataframe that was mined using Abstract_ARM or easyKAF. Limit this parameter to 5000-20000 rules as deduplication is very computationally demanding.
 #' @keywords Hashing, LSH, Locality sensitive hashing, deduplication, Jaccard Similarity, fuzzy matching, AOP
 #' @export
 #' @examples

@@ -2,7 +2,7 @@
 #' The KAF visualization suite
 #'
 #' This function allows you to display rules as a bargraph or as a dataframe according to the classification of choice.
-#' @name ruleViewer
+#' @name KAFviewer
 #' @param rules The data frame of rules you want to classify
 #' @param viz The visualization option ("df" or "bar")
 #' @param class The classification display option ("all","bme","anatomy", "organism","diseases","chemicals","techniques","other","unlab")
@@ -11,7 +11,7 @@
 #' @export
 #' @examples
 #' ruleViewer(viz <- ruleViewer(classified_rules, "bar", "bme"))
-ruleViewer <- function(rules, viz, class){
+KAFviewer <- function(rules, viz, class){
 
 
       #7 choices for data selection
