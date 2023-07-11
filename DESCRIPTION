@@ -5,10 +5,8 @@ Authors@R:
     person("Christian Alejandro", "Hernandez-Fajardo", , "christian.a.hernandezf@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package retrieves, pre-processes, data mines, classifies, and visualizes association-rules mined for any PubMed query.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Imports:  tidyverse (>= 2.0), easyPubMed (>= 2.13), europepmc (>= 0.4.1), spacyr (>= 1.2.1), arules (>= 1.7-5), httr (>= 1.4.4), jsonlite (>= 1.8.4), dplyr (>= 1.1.0), XML (>= 3.99-0.14), textreuse (>= 0.1.5)
+License: MIT + file LICENSE
+Imports: tidyverse (>= 2.0), easyPubMed (>= 2.13), europepmc (>= 0.4.1), spacyr (>= 1.2.1), arules (>= 1.7-5), httr (>= 1.4.4), jsonlite (>= 1.8.4), dplyr (>= 1.1.0), XML (>= 3.99-0.14), textreuse (>= 0.1.5)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-
